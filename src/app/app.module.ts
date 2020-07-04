@@ -8,12 +8,18 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { FruitsPageComponent } from './fruits-page/fruits-page.component';
 import { FruitsService } from './fruits.service';
 import { AppRoutingModule } from './app-routing.module';
+import { FruitPageComponent } from './fruit-page/fruit-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartPageComponent,
-    FruitsPageComponent
+    FruitsPageComponent,
+    FruitPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [FruitsService],
+  providers: [FruitsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
